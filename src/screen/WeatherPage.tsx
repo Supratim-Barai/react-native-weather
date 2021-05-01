@@ -48,7 +48,7 @@ const WeatherPage: FC = () => {
             </Text>
             <Text style={[styles.text,{ fontSize: 28}]}>Temp: {data?.main.temp} °C</Text>
             <Text style={[styles.text,{ fontSize: 28}]}>Humidity: {data?.main?.humidity}%</Text>
-            <Text style={[styles.text,{ fontSize: 28}]}> Wind: {data?.wind?.speed} km/h</Text>
+            <Text style={[styles.text,{ fontSize: 28}]}>Wind: {data?.wind?.speed} km/h</Text>
            
           </ImageBackground>
         )} 
