@@ -41,11 +41,15 @@ const WeatherPage: FC = () => {
         />
         {data?.main &&(
           <ImageBackground
-            source={data?.main.temp > 20 ? image2 : image}
+            source={data?.main?.temp > 20 ? image2 : image}
             style={styles.image}>
             <Text style={styles.text}>
               {data?.name}, {data?.sys.country}
             </Text>
+            <Text style={[styles.text,{ fontSize: 28}]}>Temp: {data?.main.temp} °C</Text>
+            <Text style={[styles.text,{ fontSize: 28}]}>Humidity: {data?.main?.humidity}%</Text>
+            <Text style={[styles.text,{ fontSize: 28}]}> Wind: {data?.wind?.speed} km/h</Text>
+           
           </ImageBackground>
         )} 
       </View>
@@ -69,7 +73,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'white',
-    fontSize: 42,
+    fontSize: 35,
     fontWeight: 'bold',
     textAlign: 'center',
     backgroundColor: '#000000a0',
