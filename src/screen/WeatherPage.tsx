@@ -21,7 +21,7 @@ const WeatherPage: FC = () => {
 
   const image = require('../assets/cold.jpg');
   const image2 = require('../assets/warm.jpg');
-  console.log({data});
+  console.log(JSON.stringify(data));
 
   return (
     <>
@@ -39,15 +39,15 @@ const WeatherPage: FC = () => {
             />
           }
         />
-        {data?.data?.main && (
+        {data?.main &&(
           <ImageBackground
-            source={data?.data?.main.temp > 20 ? image2 : image}
+            source={data?.main.temp > 20 ? image2 : image}
             style={styles.image}>
             <Text style={styles.text}>
-              {data?.data?.name}, {data?.data?.sys.country}
+              {data?.name}, {data?.sys.country}
             </Text>
           </ImageBackground>
-        )}
+        )} 
       </View>
     </>
   );
